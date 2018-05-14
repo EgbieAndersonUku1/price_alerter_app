@@ -1,12 +1,25 @@
-#Price Alert application
 
 
+Price Alert application
 Project complete
 Started on 14th April 2018 completed on 14th May 2018.
 
+Technologies Used
 
-#What is price Alerter?
-#
+Python3.6
+
+MongoEngine
+
+MailGun API
+
+Flask
+
+CSS
+
+HTML
+
+What is price Alerter?
+
 **Price Alerter** is an online web based application that allows users to track the prices of any
 *online item*. The app allows the user to create a given store along with the price of
 the item they want to track.
