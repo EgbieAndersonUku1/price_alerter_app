@@ -1,0 +1,88 @@
+{% extends "index.html" %}
+
+{% block title %} User's Alerts {% endblock %}
+
+
+{% block body %}
+
+{% if alerts.items %}
+<div class>
+    <div>
+        <h1>
+            <div>
+                <center>
+            <small style="font-size: 82px;">Active alerts</small>
+                <p id='item-info' class="text-muted">Click on the alert you want to edit</p>
+                </center>
+            </div>
+        </h1>
+    </div>
+</div>
+
+{% else %}
+
+<div>
+    <div>
+        <h1>
+            <div>
+                <center>
+            <small style="font-size: 82px;">No active alerts</small>
+                <hr>
+                <p id='item-info' class="text-muted">You have no active alerts. Click the store button
+                    in navigation to go back to your stores</p>
+                </center>
+            </div>
+        </h1>
+    </div>
+</div>
+
+{% endif %}
+
+
+<div class="row">
+
+     {% for alert in alerts.items %}
+          <div class="alerts col-sm-6">
+
+            <div id='card' class="card text-center">
+                <div class="card-header">
+                        Alert for item<br> <a href="{{ url_for('alert_app.get_alert_page', alert_id=alert.alert_id) }}">
+                        {{ alert.item.item_name.title() }}</a>
+
+                </div>
+
+
+             <div class="card-body">
+                <p class="card-text">
+                    <br>The store the item's alert belongs to is <br><strong> {{ alert.item.store.store_name | truncate(20) }} </strong>
+                    <br>The last price for the item was <br> £{{ alert.price_limit }}
+                </p>
+
+            </div>
+
+
+            <div class="card-footer text-muted">
+
+                <em>The last alert was performed on <br>
+                    {{ alert.last_checked.strftime('%c') }}</em>
+            </div>
+
+
+            </div>
+
+
+          </div>
+    {% endfor %}
+
+
+
+
+</div>
+
+
+{% from "__pagination_helper.html" import render_navigation %}
+{{ render_navigation(alerts, 'alert_app.all_alerts') }}
+
+
+
+{% endblock %}

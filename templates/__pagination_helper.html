@@ -1,0 +1,25 @@
+
+
+{% macro render_navigation(pagination, endpoint, store_id) %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if pagination %}
+            {% for page in pagination.iter_pages() %}
+            {% if page %}
+
+            {% if page != pagination.page %}
+            <li class="page-item"><a class="page-link" href="{{ url_for(endpoint, page=page, store_id=store_id) }}">{{ page }}</a></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="#"><strong>{{ page }}</strong></a></li>
+            {% endif %}
+            {% else %}
+            <li class="page-item"><a class="page-link" href="#"><span class=ellipsis>…</span></a></li>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
+</nav>
+{% endmacro %}
+
+
+

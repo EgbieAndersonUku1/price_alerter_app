@@ -1,0 +1,38 @@
+<nav class="navbar tm-main-nav">
+
+    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse"
+            data-target="#tmNavbar">
+        &#9776;
+    </button>
+
+    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+        <ul class="nav navbar-nav">
+            <li id="homepage" class="nav-item">
+                <a id="homepage" href="{{ url_for('stores_app.get_all_predefined_stores') }}" class="nav-link">Stores</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('stores_app.available_stores') }}" class="nav-link">My stores</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ url_for('stores_app.about_stores') }}" class="nav-link">Info</a>
+            </li>
+
+            {% if session. email %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Welcome, {{ session.email.lower() | truncate(7) }} </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('logout_app.logout') }}" class="nav-link">Logout</a>
+                </li>
+            {% else %}
+            <li class="nav-item">
+                    <a href="{{ url_for('login_app.login') }}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('registration_app.register') }}" class="nav-link">Registration</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+
+</nav>

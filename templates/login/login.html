@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+
+{% block title %} Login Page {% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-offset-1 col-lg-7 mx-auto">
+
+            <div>
+                <div>
+                    <h1>
+                        <div id="password-header">
+                            <small style="font-size: 45px;">Login
+                            </small>
+                        </div>
+                        <p class="lead text-muted">You are once step away from using price alerter
+                        </p>
+                    </h1>
+                </div>
+
+            </div>
+
+
+            {% if msg %}
+            <div class="alert alert-success">
+                {{ msg }}
+            </div>
+            {% endif %}
+
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
+
+            {% from "__formhelpers.html" import render_field %}
+
+
+            <form method="post" action="{{ url_for('login_app.login') }}" class="form">
+
+                {{ form.hidden_tag() }} <!-- prevents cross site scripting  -->
+
+                <br>
+                {{ render_field(form.email, class="form-control", placeholder="Email..") }}
+                {{ render_field(form.password, class="form-control", placeholder="Password..") }}
+                <span id="passwordHelpBlock" class="help-block"><a href="{{ url_for('password_app.forgot') }}">Forgotten password?</a></span>
+
+                <br>
+                <br>
+
+                <div id="login-btn">
+                    <button id="log-in-btn" type="submit" class="btn btn-primary">Login!</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

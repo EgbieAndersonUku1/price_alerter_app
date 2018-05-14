@@ -1,0 +1,74 @@
+{% extends "alert_base.html" %}
+
+{% block title %} User Alert {% endblock %}
+
+{% block body %}
+
+<div class="page-header container">
+    <div>
+        <h1>
+            <div>
+                <small style="font-size: 65px;">Alert
+                    for item <strong><a href="{{ alert.item_url }}" target="_blank">{{ alert.item_name }}</a></strong>
+                </small>
+            </div>
+        </h1>
+    </div>
+
+
+    <div id='info-text' class="col-lg-9">
+
+        {% if alert.item.item_image %}
+        <img class="featurette-image img-fluid mx-auto"
+             src="{{ url_for('static', filename=alert.item.item_image) }}"
+             style="width: 200px;height: 200px;"></a>
+        {% endif %}
+    <div name='alert-page' class="container">
+
+        <hr>
+
+
+        <div id="alert-button-info">
+
+
+            <p>
+                <br>The alert belongs to the item belongs to is <strong> {{ alert.item.item_name.title() }} </strong>
+                <br><br>The last price for the item was £{{ alert.price_limit }}
+                <br>
+                The last alert was performed on the <strong><em>{{ alert.last_checked.strftime('%c') }}</em></strong>
+
+            </p>
+
+            <hr>
+
+        </div>
+        {% if alert.active %}
+        <a class="btn btn-danger"
+           href="{{ url_for('alert_app.deactivate_alert', item_id=alert.item.item_id, alert_id=alert.alert_id) }}"
+           aria-disabled="true">De-activate
+            alert</a>
+        <a class="btn btn-success" href="{{ url_for('alert_app.edit_my_alert', alert_id=alert.alert_id) }}"
+           aria-disabled="true">Edit alert
+            alert</a>
+
+        {% else %}
+        <a class="btn btn-success active"
+           href="{{ url_for('alert_app.activate_alert', item_id=alert.item.item_id, alert_id=alert.alert_id) }}">Activate
+            alert</a>
+        <a class="btn btn-danger"
+           href="{{ url_for('alert_app.delete_alert', item_id=alert.item.item_id, alert_id=alert.alert_id) }}"
+           aria-disabled="true">
+            Delete alert permanently
+        </a>
+        {% endif %}
+        <a class="btn btn-warning" name="alert-page"
+           href="{{ url_for('alert_app.check_price_for_alert', alert_id=alert.alert_id) }}">Check alert price</a>
+        <a class="btn btn-primary" name="alert-page"
+           href="{{ url_for('item_app.item_store_page', store_id=alert.item.store.store_id) }}">Back to item's page</a>
+
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

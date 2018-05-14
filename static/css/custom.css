@@ -1,0 +1,335 @@
+body {
+  min-height: 80px; /* Can be removed; just added for demo purposes */
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+
+#home-page-text {
+ font-weight: 350;
+ color: darkblue;
+}
+
+h2 {
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+footer {
+text-align: center;
+background-color: #f7f7f7;
+padding: 0px;
+
+}
+
+
+#login-header {
+    padding-top: 100px;
+    padding-bottom: 19px;
+}
+
+#login-btn{
+
+padding-bottom: 160px;
+
+}
+
+
+body {
+    height: 1em;
+
+}
+
+
+
+#email {
+
+  height: 43px;
+width: 600px;
+
+}
+
+
+#password {
+
+  height: 43px;
+width: 600px;
+
+}
+
+
+#confirm {
+
+  height: 43px;
+width: 600px;
+
+}
+
+
+#username {
+
+  height: 43px;
+width: 600px;
+
+}
+
+h1{
+    font-family: Roboto;
+    text-align: center;
+    color: darkblue;
+}
+
+
+
+#homepage-header {
+ padding-top: 20px;
+
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  margin-bottom: 0;
+
+}
+
+
+
+.text-center {
+
+float: left;
+width: 32.333%;
+padding: .75rem;
+margin-bottom: 2rem;
+
+
+}
+
+
+.card-text {
+    word-wrap: break-word;
+
+}
+
+#stores-text {
+    font-size: 18px;
+}
+
+.text-center {
+font-size: 22px;
+
+}
+
+
+
+
+#item-container {
+  width: 1400px;
+
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+
+
+#card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+
+#creation-date {
+
+    font-size: 16px;
+    font-style: italic;
+    padding-bottom: 10px;
+    font-stretch: extra-expanded;
+}
+
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+
+img{
+
+width=400px;
+height=350px;
+border: 7px solid darkgrey;
+
+-webkit-box-shadow: 26px -25px 77px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 26px -25px 77px 0px rgba(0,0,0,0.75);
+box-shadow: 26px -25px 77px 0px rgba(0,0,0,0.75);
+
+}
+
+
+.store-front {
+
+font-family: 'Poppins', sans-serif;
+
+}
+
+
+.store-background-image{
+
+ background-image: url("../img/store_image.jpeg");
+}
+
+
+em {
+font-size: 17px;
+
+}
+
+.item-msg {
+
+    font-size: 19px;
+    font-style: italic;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.alert_added {
+
+    color: green;
+    font-style: condensed;
+    font-stretch: ultra-condensed;
+    font-style: italic;
+}
+
+
+.no_alert {
+
+    color: red;
+    font-style: condensed;
+    font-stretch: ultra-condensed;
+    font-style: italic;
+}
+
+
+.pagination {
+
+    padding-left: 200px;
+    padding-bottom: 60px;
+}
+
+
+li {
+color: red;
+
+}
+
+#active-alert {
+color:green;
+}
+
+
+#alert-page-error-text {
+font-family: Arial;
+font-size: 26px;
+font-stretch: extra-condensed;
+
+}
+
+
+.back-button {
+
+padding-bottom: 240px;
+
+}
+
+
+#info-text {
+    font-family: Serif;
+    font-size: 22px;
+    font-stretch: condensed;
+
+}
+
+#price-alert-error{
+
+    padding-top: 50px;
+    font-size: 70px;
+    color: red;
+    font-family: Ultra;
+}
+
+
+#item-info {
+
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+
+.card-title {
+ padding-top: 6px;
+}
+
+
+.item-warning-text {
+ color: red;
+}
+
+.text-success {
+color: green;
+font-weight: bold;
+
+}
+
+
+
+#forgotten-email {
+
+    height: 50px;
+    font-size: 22px;
+}
+
+
+
+.small, small {
+    font-size: 80%;
+    font-weight: 900;
+}
+
+
+#password-header {
+    padding-top: 100px;
+}
+
+
+#log-in-btn {
+    width: 606px;
+}

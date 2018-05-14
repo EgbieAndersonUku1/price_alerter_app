@@ -1,0 +1,71 @@
+{% extends "index.html" %}
+
+{% block title %} New Item {% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+
+    <div class="page-header">
+        <div id='alert-container' class="col-md-offset-2 col-lg-8 mx-auto">
+
+            <h1>
+                <center>
+                <small style="font-size: 50px;">Create New Item</small>
+                </center>
+                <div>
+                    <small style="font-size: 20px;color: darkgray;font-weight: bolder;">
+                        <p id='item-info' class="text-muted"> <center>Items created for this store must contain
+                        the store url prefix <br></em></center>
+                        </p>
+                        <p id='item-info' class="text-muted"> <center>The store's URL prefix is {{ url_prefix }} <br></em></center>
+                        </p>
+                    </small>
+                </div>
+            </h1>
+            <hr>
+
+            {% if msg %}
+            <div class="alert alert-success">
+                {{ msg }}
+                {% if item_id %}
+                    <br>Click <a href="{{ url_for('alert_app.create_alert', item_id=item_id) }}">here</a> to create an alert for the
+                item
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            {% from '__formhelpers.html' import render_field %}
+
+            <form action="{{ url_for('item_app.create_item', store_id=store_id) }}" method="POST"
+                  enctype=multipart/form-data>
+
+                {{ form.hidden_tag() }}
+
+                {{ render_field(form.url, class='form-control') }}
+                {{ render_field(form.item_name, class='form-control') }}
+                {{ render_field(form.description, class='form-control') }}
+                {{ render_field(form.image, class='form-control') }}
+
+                <br>
+                <button type="submit" id='item_button' class="btn btn-primary">Create item</button>
+                <a href="{{ url_for('stores_app.store_page', store_id=store_id) }}">
+                    <buttton type="button" id='item_button' class="btn btn-warning">Back to store</buttton></a>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

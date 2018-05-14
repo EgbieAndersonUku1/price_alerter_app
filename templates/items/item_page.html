@@ -1,0 +1,100 @@
+{% extends "index.html" %}
+
+{% block title %} Items with no alerts {% endblock %}
+
+{% block body %}
+
+
+<div class>
+    <div>
+        <h1>
+            <div>
+                <center>
+            <small style="font-size: 60px;">Item Name: {{ item.item_name.title() }}</small>
+                <p class="text-muted"> item belongs to the store
+                    <strong>{{ item.store.store_name }}</strong></p>
+                </center>
+            </div>
+        </h1>
+    </div>
+</div>
+
+
+<div class="container">
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div id='info-text' class="col-md-12">
+
+            <div class="col-md-7 push-md-5">
+
+                 {% if item.item_image %}
+                <img src="{{ url_for('static', filename=item.item_image) }}" style="width: 320px;height: 240px;"></a>
+
+
+                {% endif %}
+
+            <p>
+                {% if item.description %}
+                    <h3 class="tm-gold-text tm-title">Item description</h3>
+                    <p class="tm-subtitle">
+                        {{ item.description }}
+                    </p>
+                {% endif %}
+
+            <p class="tm-subtitle">
+                {% if item.price %}
+                    The price for the item is <strong>£{{ item.price }}</strong>
+                {% else %}
+                   <div class="item-warning-text">
+                        The price for the item could not be determined because the query or tag name tags might be different
+                        from the one added for this store. Check the query tag or tag name for the item using the item's URL.
+                   </div>
+
+                {% endif %}
+            </p>
+
+            <div class="item-warning-text">
+                {% if not item.alert_id and not item.alert_added and not item.alert_deleted %}
+                    {% if item.price %}
+                        <p>You have not yet added an alert for the item</p>
+                    {% endif %}
+                {% elif not item.alert_added and item.alert_deleted %}
+                <p>The alert for this item has been deleted</p>
+                {% elif item.alert_id and not item.alert_added and not item.alert_deleted %}
+                <p>The alert for this item has been disabled</p>
+                {% else %}
+                <p>
+                    <div class="text-success">An alert has been added to this item</div>
+                </p>
+            </div>
+
+
+            {% endif%}
+
+            </p>
+        </div>
+    </div>
+    </div>
+
+
+    <br><br>
+    <center>
+        <button class='btn btn-primary' onclick="goBack()">Back to items page</button>
+        <a href="{{ url_for('item_app.delete_item', item_id=item.item_id, store_id=item.store.store_id) }}">
+            <button type="button" class="btn btn-danger">Delete item</button>
+        </a>
+    </center>
+
+    <script>
+function goBack() {
+    window.history.back();
+}
+
+
+    </script>
+</div>
+</div>
+
+
+{% endblock %}
+

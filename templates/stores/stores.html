@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block title %} Stores {% endblock %}
+
+
+{% block body %}
+
+
+<div class="page-header container">
+
+    <div>
+        <h1 id="store-header">
+            <center>
+            <div id='no-stores' class="col-lg-12 mx-auto">
+                {% if stores.items %}
+                   <small style="font-size: 49px;">Available stores</small>
+            {% else %}
+                <small style="font-size: 52px;font-variant-east-class\=\&quot;col-md-offset-2\ col-lg-9\ mx-auto\&quot;asian: full-width;font-variant-caps: ;font-variant-caps: small-caps;/*! background-color: darkgrey; */padding-left: 22px;/*! padding-top: ; */padding-right: 22px;">You have not yet created any stores yet</small><div>
+
+            {% endif %}
+            </div>
+            </center>
+
+
+        </h1>
+    </div>
+</div>
+
+
+<div class="container">
+
+    <div class="row">
+
+        {% for store in stores.items %}
+
+        <div id='card' class="card text-center">
+            <div class="card-header">
+                <strong><a href="{{ url_for('stores_app.edit_store', store_id=store.store_id) }}">{{ store.store_name | truncate(20) }}</a></strong><br>
+                <small><a href="{{ store.url_prefix}}" target="_blank">{{store.url_prefix | truncate(25) }}</a></small>
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+
+                {% if not store.description %}
+                <p class="card-text">
+
+                </p>
+                {% else %}
+                <p class="card-text"> Store description. <br> {{ store.description }}</p>
+
+                {% endif %}
+
+                <hr>
+                <div id="creation-date">Store was created on {{ store.creation_date.strftime('%c') }}</div>
+
+
+            </div>
+
+            <div class="card-footer text-muted">
+                <a href="{{ url_for('stores_app.store_page', store_id=store.store_id) }}">
+                    <button id="store_buttons" class="btn btn-primary">
+                        View store
+                    </button>
+                </a>
+                <a href="{{ url_for('stores_app.delete_store', store_id=store.store_id) }}"><button id="store_buttons" class="btn btn-danger">Delete store</button></a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    <center>
+        <a href="{{ url_for('stores_app.create_store') }}"><button id='no-store-buttons' type="button" class="btn btn-success">Create new store</button> </a>
+    </center>
+</div>
+
+
+<br>
+{% from "__pagination_helper.html" import render_navigation %}
+{{ render_navigation(stores, 'stores_app.available_stores') }}
+
+
+{% endblock %}

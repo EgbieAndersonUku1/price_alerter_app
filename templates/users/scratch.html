@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %} Stores {% endblock %}
+
+{% block body %}
+
+{% if items %}
+
+
+
+<div class="page-header container">
+
+    <div>
+        <h1 id="store-header">
+            <div>
+                <small>Available items</small>
+            </div>
+        </h1>
+    </div>
+</div>
+
+{% else %}
+
+<h1 class="jumbotron"></h1>
+
+<div class="jumbotron">
+    <div id='stores' class="col-md-offset-2 col-lg-7 mx-auto">
+        <h1 id="no-alerts-header">You have no items yet</h1>
+    </div>
+</div>
+
+{% endif %}
+
+
+<div class="container">
+    <div class="row">
+
+        {% for item in items.items %}
+
+        <div id='card' class="card text-center">
+            <div class="card-header">
+                <strong>{{ item.store.store_name }}</strong>
+
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ item.item_name }} </h5>
+
+
+                {% if item.description %}
+                    <p class="card-text">{{ item.description }}</p>
+                {% else %}
+                    <div class="item-msg">
+                        <p class="card-text">There is no description for this item<br>
+                         Feel free to add a description
+                        </p>
+                    </div>
+                {% endif %}
+                <div class="alert_added">
+                       {% if item.alert_added %}
+                        <p class="card-text">Alert added
+                        </p>
+                    {% endif %}
+
+
+            </div>
+            <div class="card-footer text-muted">
+
+                {% if not item.alert_added %}
+                    {% if item.alert_id %}
+                        <a href="{{ url_for('alert_app.activate_alert', item_id=item.item_id, alert_id=item.alert_id) }}"><button type="button" class="btn btn-danger">Turn on alert</button></a>
+                    {% else %}
+                        <a href="{{ url_for('alert_app.create_alert', item_id=item.item_id, alert_id=item.alert_id) }}"><button type="button" class="btn btn-danger">Add alert</button></a>
+                    {% endif %}
+                {% else %}
+                    {% if item.alert_id %}
+                         Deactivate alert
+                        <a href="{{ url_for('alert_app.deactivate_alert', item_id=item.item_id, alert_id=item.alert_id) }}"><button type="button" class="btn btn-danger">Turn off alert</button></a>
+                    {% else %}
+                         <div class="no_alert">
+                            <p class="card-text"> No Alert added
+                            </p>
+                         </div>
+                        <a href="{{ url_for('alert_app.get_alert_page', alert_id=item.alert_id) }}"><button type="button" class="btn btn-warning">View alert</button></a>
+                  {% endif%}
+                {% endif %}
+                <a href="{{ url_for('item_app.view_item', item_id=item.item_id) }}"><button type="button" class="btn btn-success">View item</button></a>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        <div class="container">
+
+            <a href="{{ url_for('item_app.create_item', store_id=store_id) }}"><button type="buttton" class="btn btn-success">
+                Create item</button> </a>
+
+            <a href="{{ url_for('stores_app.available_stores', store_id=store_id) }}"><button type="buttton" class="btn btn-primary">
+                Back to main stores</button> </a>
+        </div>
+    </div>
+</div>
+
+
+{% from "__pagination_helper.html" import render_navigation %}
+{{ render_navigation(items, 'item_app.item_store_page', store_id) }}
+
+{% endblock %}

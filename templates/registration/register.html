@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block title %} Registration Page {% endblock %}
+
+
+{% block body %}
+
+
+        <div class="col-md-offset-1 col-lg-7 mx-auto">
+
+            <h1>
+                        <div id="password-header">
+                            <small style="font-size: 45px;">Registration
+                            </small>
+                        </div>
+                        <p class="lead text-muted">Register your details to use your price alerter app
+                            Click here to <a href="{{ url_for('login_app.login') }}">login</a> to login.
+                        </p>
+                    </h1>
+
+            {% from "__formhelpers.html" import render_field %}
+
+            <form method="post" action="{{ url_for('registration_app.register') }}" class="registration_form">
+
+                {{ form.hidden_tag() }} <!-- prevents cross site scripting  -->
+
+                <br>
+                {{ render_field(form.username, class="form-control", placeholder="Username..") }}
+                {{ render_field(form.email, class="form-control", placeholder="Email..") }}
+                {{ render_field(form.password, class="form-control", placeholder="Password..") }}
+                {{ render_field(form.confirm, class="form-control", placeholder="Confirm password..") }}
+
+                <br>
+                <button type="submit" class="btn btn-primary">Sign me up!</button>
+            </form>
+        </div>
+
+
+
+{% endblock %}

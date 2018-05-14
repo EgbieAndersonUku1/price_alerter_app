@@ -1,0 +1,187 @@
+{% extends "index.html" %}
+
+{% block title %}Home page{% endblock %}
+
+
+{% block body %}
+
+<div id="homepage" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+    <h2 class="tm-gold-text tm-title">What is Price Alerter?</h2>
+    <p class="tm-subtitle">
+            <em>Price Alerter</em> is an online web based application that allows users to track the prices of any
+            *online item*. The app allows the user to create a given store along with the price of
+            the item they want to track.
+
+            The app will then monitor the price of
+            the item and if the prices changes the user would be alerted of the new price by email.
+
+            The site comes with three predefined stores Ebay, Amazon and Game that allows the
+            user create an item which the user can then add an alert to.
+    </p>
+</div>
+</a>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+        <div class="tm-content-box">
+            <img src="{{ url_for('static', filename='img/ebay.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+            <h4 class="tm-margin-b-20 tm-gold-text">Ebay</h4>
+            <p class="tm-margin-b-20">eBay Inc. is a multinational e-commerce corporation based in San Jose,
+                California that facilitates
+            </p>
+            {% if session.email %}
+            <a href="{{ url_for('stores_app.get_store_by_name', store_name='Ebay' ) }}"
+               class="tm-btn text-uppercase">Go to store</a>
+            {% else %}
+                <a href="{{ url_for('stores_app.get_store_by_name', store_name='Ebay' ) }}"
+               class="tm-btn text-uppercase">Read more</a>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+        <div class="tm-content-box">
+            <img src="{{ url_for('static', filename='img/game.jpeg') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+            <h4 class="tm-margin-b-20 tm-gold-text">Game</h4>
+            <p class="tm-margin-b-20">Game Digital plc is the parent company of Game Retail Limited, a British
+                video game company that</p>
+
+            {% if session.email %}
+            <a href="{{ url_for('stores_app.get_store_by_name', store_name='Game' ) }}"
+               class="tm-btn text-uppercase">Go to Store</a>
+            {% else %}
+                 <a href="{{ url_for('stores_app.get_store_by_name', store_name='Game' ) }}"
+               class="tm-btn text-uppercase">Read more</a>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+
+        <div class="tm-content-box">
+            <img src="{{ url_for('static', filename='img/amazon.jpeg') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+            <h4 class="tm-margin-b-20 tm-gold-text">Amazon UK store</h4>
+            <p class="tm-margin-b-20">Amazon is an American electronic commerce and cloud computing company
+                based in Seattle, Washington that</p>
+
+            {% if session.email %}
+            <a href="{{ url_for('stores_app.get_store_by_name', store_name='Amazon') }}"
+               class="tm-btn text-uppercase">Go to store</a>
+            {% else %}
+                 <a href="{{ url_for('stores_app.get_store_by_name', store_name='Amazon') }}"
+               class="tm-btn text-uppercase">Read more</a>
+            {% endif %}
+        </div>
+
+    </div>
+
+
+</div> <!-- row -->
+
+<div class="row tm-margin-t-big">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="tm-2-col-left">
+
+            <h3 class="tm-gold-text tm-title">Why would I want to use price alerter?</h3>
+
+            <img src="{{ url_for('static', filename='img/bell.jpeg') }}" alt="Image"
+                 class="tm-margin-b-40 img-fluid">
+
+            <p class="tm-margin-b-30">Suppose you go to an online website and you see an item you really want to
+                buy. But unfortunately the price for the item is way too high. And this point you left with two
+                choices buy the item or wait for the price to down.
+                <br><br>
+
+                Now suppose you chose the latter, you then left with another choice on how to check the item
+                price. One way is to save the item's web page to your bookmark and then check the prices hourly
+                or daily. When the price drops you can then purchase the item. Great, but it seems like a bit
+                hassle just to buy an item. What if you want buy multiple items?
+                <br><br>
+                The second way is to use Price Alerter which does the the same job but without you lifting a
+                finger. Well, you might have to lift a few fingers, create the store, create an item to monitor
+                as well as the price, add the url but that it, I swear.
+                <br><br>
+
+
+            <h3 class="tm-gold-text tm-title">Great, but how does price alerter work?</h3>
+
+            <img src="{{ url_for('static', filename='img/instructions.jpeg') }}" alt="Image"
+                 class="tm-margin-b-40 img-fluid">
+
+            Price Alerter works by allowing the user to set a price alert for a specific product/item from
+            any store listed in the website e.g Ebay, John Lewis, etc, the user wants to buy. The user can
+            also create a new store if the store is not listed in the list of the pre-defined stores.
+
+            <br><br>
+            The application then monitors the price behind the scenes regulary checking if the price has
+            dropped and when the item's price dropped an email is sent to the user informing of the price
+            drop. Now the user is free to purchase the item saving them a ton of money or multiple
+            items. </p>
+
+            <br><br>
+
+            <h3 class="tm-gold-text tm-title">Creating a store overview</h3>
+
+            <img src="{{ url_for('static', filename='img/store.jpeg') }}" alt="Image"
+                 class="tm-margin-b-40 img-fluid">
+
+            <p class="tm-margin-b-30">
+                To create a store click on the <strong>My store</strong> link. Next create the <strong>create store button</strong>
+                feel in the rows. For the information on how to create the tagname and store query click on the helpblock inside
+                the create store page
+            </p>
+            <a href="{{ url_for('stores_app.creating_stores') }}" class="tm-btn text-uppercase">Read More</a>
+
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+        <div class="tm-2-col-right">
+
+            <div class="tm-2-rows-md-swap">
+                <div class="tm-overflow-auto row tm-2-rows-md-down-2">
+                    <div class="col-md-6">
+                        <h3 class="tm-gold-text tm-title">
+                            Featured stores
+                        </h3>
+                        <nav>
+                            <ul class="nav">
+                                <li><a href="{{ url_for('stores_app.get_store_by_name', store_name='Ebay') }}" class="tm-text-link">Ebay store</a></li>
+                                <li><a href="{{ url_for('stores_app.get_store_by_name', store_name='Amazon') }}" class="tm-text-link">Amazon store</a></li>
+                            </ul>
+                        </nav>
+                    </div> <!-- col -->
+
+                </div>
+
+
+            </div>
+        </div>
+        <br><br>
+        <div class="col-md-9">
+            <h3 class="tm-gold-text tm-title">
+                Additional information
+            </h3>
+            <nav>
+                <ul class="nav">
+                    <li><a href="{{ url_for('stores_app.creating_stores') }}" class="tm-text-link">How to create a store?</a></li>
+                    <li><a href="{{ url_for('stores_app.about_stores') }}" class="tm-text-link">About stores</a></li>
+
+                </ul>
+            </nav>
+        </div> <!-- col -->
+    </div>
+
+</div>
+
+
+{% endblock %}

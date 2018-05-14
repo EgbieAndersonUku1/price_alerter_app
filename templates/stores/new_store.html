@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block title %} Stores {% endblock %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+
+        <div class="col-md-offset-2 col-lg-8 mx-auto">
+            <h1>
+
+            <small><span id="info-title">Create new store</small>
+
+        </h1>
+            <hr>
+
+            {% if error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            {% from '__formhelpers.html' import render_field %}
+
+
+               <form action="{{ url_for('stores_app.create_store') }}" method="POST">
+
+
+
+                {{ form.hidden_tag() }}
+
+                {{ render_field(form.store_name, class='form-control', placeholder='store name..') }}
+                {{ render_field(form.description, class='form-control', placeholder='Store description..') }}
+                {{ render_field(form.url_prefix, class='form-control', placeholder='http://..') }}
+                {{ render_field(form.tag_name, class='form-control', placeholder='html tag i.e. span') }}
+                {{ render_field(form.query, class='form-control', placeholder='JSON query for search..') }}
+                   <span id="passwordHelpBlock" class="help-block"><a href="{{ url_for('stores_app.creating_stores') }}">How to create a store using the span and store query?</a></span>
+
+                    <br>
+                    <button type="submit" id="create_store_btn" class="btn btn-primary">Create store</button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
+<br>
+
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %} User's Alerts {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>
+            <small>Edit alert</small>
+        </h1>
+        <br>
+
+
+        <div id='alert-container' class="col-md-offset-2 col-lg-10 mx-auto">
+
+            {% if error %}
+            <div class="alert alert-success">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            {% from '__formhelpers.html' import render_field %}
+
+
+            <form action="{{ url_for('alert_app.edit_my_alert', alert_id=alert_id) }}" method="POST">
+
+                <!-- Current alert details-->
+                <table class="table table-hover table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Store name </th>
+                        <th scope="col">Item name</th>
+                        <th scope="col">Current price alert</th>
+                        <th scope="col">URL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>{{ alert.item.store_name.title() | truncate(20) }}</td>
+                        <td>{{ alert.item.item_name.title()  | truncate(20) }}</td>
+                        <td>£{{ alert.price_limit }}</td>
+                        <td><a href="{{ alert.item.url}}" target="_blank">{{ alert.item.url }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                {{ form.hidden_tag() }}
+
+                {{ render_field(form.alert_limit, class='form-group') }}
+
+                <button type="submit" class="btn btn-primary">Edit alert</button>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+<br>
+
+{% endblock %}

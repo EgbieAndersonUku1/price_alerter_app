@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+
+{% block title %} Login Page {% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+
+        <center>
+        <div class="store-header">
+            <h1>
+                <div class="headings">
+                    Store <strong>
+                    <a href="{{ store.url_prefix }}" target="_blank"><span class="store_name">{{ store.store_name }}</span></a>
+                        </strong>
+                </div>
+
+            </h1>
+
+            <h4>
+                The prefix of the store is <em>{{ store.url_prefix }}</em>
+            </h4>
+            <h4>
+                <em>All items created in this store must have this url prefix</em>
+            </h4>
+        </div>
+        </center>
+
+    </div>
+
+    <hr>
+
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">
+                    <center><span
+                            class="text-muted">Store Description</span>
+                </h2>
+                <p id='home-page-text' class="lead">
+                    {% if store.predefined_store %}
+                    {{ store.description | safe }}
+                    {% else %}
+                    {{ store.description }}
+                    {% endif %}
+
+                </p>
+            </div>
+            <div class="col-lg-5">
+                <img class="featurette-image img-fluid mx-auto"
+                     src="{{ url_for('static', filename='img/store_image.jpeg') }}">
+
+            </div>
+
+            <br>
+
+        </div>
+
+        <br><br>
+        <center>
+        <a href="{{ url_for('item_app.create_item', store_id=store.store_id) }}">
+            <button id='store_button' class="btn btn-primary">Create item</button>
+        </a>
+        <a href="{{ url_for('item_app.item_store_page', store_id=store.store_id, page=1) }}">
+            <button id='store_button' class="btn btn-success">View items in store</button>
+        </a>
+        </center>
+
+    </div>
+
+{% endblock %}

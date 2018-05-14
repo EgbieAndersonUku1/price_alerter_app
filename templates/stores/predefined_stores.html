@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+
+{% block title %} Stores {% endblock %}
+
+{% block body %}
+
+
+{% if stores %}
+<div class="page-header container">
+
+    <div id='no-stores' class="col-lg-12 mx-auto">
+        <h1>
+            <div>
+             <small style="font-size: 80px;/*! padding: ; */padding-bottom: 200px;">Available predefined stores</small>
+            </div>
+        </h1>
+    </div>
+</div>
+
+{% else %}
+
+<h1 class="jumbotron-heading"></h1>
+
+
+    <div id='no-stores' class="col-lg-12 mx-auto">
+        <h1 id="no-alerts-header">Hey, you seeing this page because you have no predefined storess</h1>
+    </div>
+
+    <br>
+    <br>
+    <center>
+
+        <button onclick="goBack()" class="btn btn-primary btn-lg btn-block">Go Back</button>
+    </center>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</div>
+
+
+{% endif %}
+
+
+<div class="container">
+
+    <div class="row">
+
+
+        {% for store in stores.items %}
+
+         <div id='store-col' class="col-sm-6">
+        <div id='card' class="card text-center">
+            <div class="card-header">
+                <strong>{{ store.store_name }}</strong><br>
+                <small><a href="{{ store.url_prefix}}" target="_blank">{{store.url_prefix }}</a></small>
+            </div>
+
+
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+
+                {% if store.description %}
+                <p id="stores-text" class="card-text" style="font-weight: 205px;font-style: normal;font-weight: 500;">
+                    {{ store.description | truncate(80) }}
+                </p>
+
+                {% endif %}
+
+                <hr>
+                <div id="creation-date">Store was created on <em>{{ store.creation_date.strftime('%c') }}</em></div>
+
+
+            </div>
+
+            <div class="card-footer text-muted">
+                <a href="{{ url_for('stores_app.store_page', store_id=store.store_id) }}">
+                    <button class="btn btn-primary">
+                        View store
+                    </button>
+                </a>
+
+            </div>
+        </div>
+         </div>
+
+
+        {% endfor %}
+
+    </div>
+{% from "__pagination_helper.html" import render_navigation %}
+{{ render_navigation(stores, 'stores_app.available_stores') }}
+
+</div>
+
+{% endblock %}

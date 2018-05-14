@@ -1,0 +1,123 @@
+{% extends "index.html" %}
+
+{% block title %} Stores {% endblock %}
+
+{% block body %}
+
+{% if items.items %}
+<div class="page-header container">
+
+    <div>
+        <h1 id="store-header">
+            <div class="col-md-offset-2 col-lg-9 mx-auto">
+                {% if items.items %}
+                    <small style="font-size: 79px;">Available items</small>
+                   <br>
+                {% endif %}
+            </div>
+        </h1>
+    </div>
+</div>
+{% else %}
+    <h1 id="store-header">
+            <div class="col-md-offset-1 col-lg-11 mx-auto">
+                <small style="font-size: 30px;background-color: lightblue;/*! padding: 50px; *//*! padding-top: 10px; */padding: 10px;font-style: oblique;font-variant-caps: all-small-caps;/*! font-stretch: semi-condensed; */font-weight: bolder;">You have no items created. click the back button to create an item
+                    <script>
+                            function goBack() {
+                                window.history.back();
+                             }2
+                 </script>
+                </small>
+
+            </div>
+    </h1>
+
+
+{% endif %}
+
+
+<div class="row">
+
+    {% for item in items.items %}
+        <div class="col-sm-6">
+            <div class="card">
+
+                <div class="card-header">
+                    <a id='item-header' href="{{ url_for('alert_app.get_alert_page', alert_id=item.alert_id) }}">
+                        <strong>{{ item.store.store_name.title() }}</strong>
+                    </a>
+
+                    <div class="no_alert">
+                        {% if item.alert_deleted %}
+                            <p id="deleted-alert" class="card-text"> The alert for this item has been deleted</p>
+                        {% elif not item.alert_added and item.alert_id %}
+                            <p id="disabled" class="card-text"> Current alert is disabled</p>
+                        {% elif item.alert_added %}
+                            <p id="active-alert" class="card-text"> Current alert is active</p>
+                        {% else %}
+                            <p id="no-alert" class="card-text"> Item has no alert</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="card-body">
+                     <h5 class="card-title"></h5>
+
+                    {% if item.item_description  %}
+                        <p class="card-text"> {{ item.item_description | truncate(69) }}</p>
+                    {% else %}
+                        <p class="card-text"> There is no description for this item<br>
+                            Feel free to add a descriptions {{ item.description }}</p>
+                    {% endif %}
+
+                    <hr>
+                    <div id="creation-date">Item was created on <br><em>{{ item.creation_date.strftime('%c') }}</em></div>
+
+                </div>
+
+                <div class="card-footer text-muted">
+                    {% if not item.alert_added %}
+
+                        {% if item.alert_id and not item.alert_deleted %}
+                        <a href="{{ url_for('alert_app.activate_alert', item_id=item.item_id, alert_id=item.alert_id) }}">
+                            <button type="button" class="btn btn-danger">Turn on alert</button>
+                        </a>
+                        {% else %}
+                            <a href="{{ url_for('alert_app.create_alert', item_id=item.item_id, alert_id=item.alert_id) }}">
+                                <button type="button" class="btn btn-danger">Add alert</button>
+                            </a>
+                        {% endif %}
+
+                    {% else %}
+
+                        {% if item.alert_id %}
+                            <a href="{{ url_for('alert_app.deactivate_alert', item_id=item.item_id, alert_id=item.alert_id) }}">
+                                <button type="button" class="btn btn-warning">Disable alert</button>
+                            </a>
+                        {% endif %}
+
+
+                    {% endif %}
+
+                        <a href="{{ url_for('item_app.view_item', item_id=item.item_id) }}">
+                            <button type="button" class="btn btn-success">View item</button>
+                        </a>
+            </div>
+
+
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+</div>
+
+</center>
+
+{% from "__pagination_helper.html" import render_navigation %}
+{{ render_navigation(items, 'item_app.item_store_page', store_id) }}
+
+</div>
+    </div>
+{% endblock %}

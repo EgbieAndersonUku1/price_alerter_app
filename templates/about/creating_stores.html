@@ -1,0 +1,145 @@
+{% extends "index.html" %}
+
+{% block title %} About Page {% endblock %}
+
+{% block body %}
+
+<div id="homepage" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+    <h2 class="tm-gold-text tm-title">How to create a store? </h2>
+</div>
+
+<div id="homepage" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-left">
+    <p class="tm-subtitle">
+
+        In this example we going to go through the steps of creating an Ebay store
+
+        <br>
+        To do this there are two things that we need:
+        <br><br>
+        The first is the <strong>tag name</strong> and the second is the <strong>store query</strong>.
+        <br><br>
+        The <strong> tag name </strong> and <strong>story query</strong> enables the app to query the price for any
+        item that belongs to this store
+    </p>
+
+    <br>
+    <img src="{{ url_for('static', filename='img/find-item-1.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+    <br>
+    <p class="tm-subtitle">
+        First, go to the website of your choice. In this example we are using the Ebay website.
+
+        This will be our store for the app.
+        <br><br>
+        Select any item from the website. The item selected must show the full price of the item and not the price range.
+        <br><br>
+        For example, the price must not be a range of two numbers, e.g <strong>£20 - £30</strong> but a single confirmed
+        price e.g. <strong> £25 </strong>.
+        <br><br>
+        In this example we using the item <strong>WX255L WORX SD SemiAutomatic Driver w/ Screw Holder</strong> and
+        the price for the item is <strong>$21.99</strong>
+
+    </p>
+    <p class="tm-subtitle">
+        Highlight the price of the item and right click the mouse. A popup box
+        should appear. Select the option <strong>inspect element</strong>.
+        You should see something similar to the highlighted picture below.
+        <br>
+    </p>
+
+    <img src="{{ url_for('static', filename='img/find-item-5.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+
+
+     <br>
+    <p class="tm-subtitle">
+        Now, right click the mouse on the highlighted link show above to open the dialogue box show below
+    </p>
+     <img src="{{ url_for('static', filename='img/find-item-3.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+
+     <br>
+
+    <br>
+
+    <center>
+        <div id="img-pic">
+        <img src="{{ url_for('static', filename='img/find-item-6.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+        </div>
+
+    </center>
+
+     <br>
+
+    <p class="tm-subtitle">
+        The first element in the bracket is usually the tag and it can be <strong> li, span, div, etc</strong>.
+
+
+        <br><br> In this case the tag name is span. Now we need to select the query.
+        The query is the id="some value", class="some value" or the the itemprop="some value".
+        Note these elements might vary.
+
+        <br><br>
+        Select one or all of them. Make a mental note or write the one you have selected. In this case we are going
+        to select the <strong>itemprop="price"</strong><br>
+        Now we are ready to create our store.
+
+    </p>
+    <br><br>
+    <img src="{{ url_for('static', filename='img/create_store1.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+
+    <br><br>
+    <p class="tm-subtitle">
+        To create a store click on my store locate in the above picture.
+        After clicking on the button you be giving the options to create a new store.
+        This would look like the picture below
+    </p>
+
+    <img src="{{ url_for('static', filename='img/create_store_1.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+
+    <p class="tm-subtitle">
+       Click the create new store button
+    </p>
+
+    <img src="{{ url_for('static', filename='img/create_store_2.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+
+    <br>
+    <p class="tm-subtitle">
+       You should now be greeted by a row of tables. The tag name and query should already
+        be filled in. For now leave that we get to it in a bit.
+    </p>
+
+    <img src="{{ url_for('static', filename='img/create_store_part_3.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+    <br>
+
+    <p class="tm-subtitle">
+        Fill in the store details e.g the title, description and the url prefix. For the tag name
+        enter the tag name you had taken earlier. Replace the default query with elements of the new query.
+        <br><br>In our early query we made a mental note of the query <strong> itemprop=price</strong><br>
+        Now replace the default string id and price-now with the new query<strong>{"id": "price-now"}</strong>
+        <br><br>
+        In our case the new query will be <strong>{"itemprop": "price"}</strong><br><br>
+        The itemprop and price must be placed inside double quotes. Note we could entered the store query as
+        <strong>{"itemprop": "price", "id": "prcIsum", "class": "notranslate"}</strong> and it would still
+        would have worked
+    </p>
+
+    <center>
+         <img src="{{ url_for('static', filename='img/newly_created_store.png') }}" alt="Image"
+                 class="tm-margin-b-20 img-fluid">
+    </center>
+
+    <br>
+
+    <p class="tm-subtitle">
+        Congratulations, you now have a store
+    </p>
+</div>
+
+
+{% endblock %}

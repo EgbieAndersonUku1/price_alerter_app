@@ -1,0 +1,38 @@
+{% extends "alert_base.html" %}
+
+{% block title %} Alert Error {% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+
+    <div class="page-header">
+        <h1 id="price-alert-error">Price Alert Error
+        </h1>
+    </div>
+
+    <div id='alert-page-error' class="container">
+
+        <hr>
+        <p id='alert-page-error-text' class="muted-text">
+            <br>You seeing this page because the alert for this item does not exist or has been deleted. To
+            <br><strong>edit </strong> and alert for any item you must first add an alert. <br><br> To set an alert
+            for the current item click on the button below and then add an alert.
+        </p>
+        <hr>
+
+        <div class="back-button">
+        <button onclick="goBack()">Back to items</button>
+
+        <script>
+        function goBack() {
+    window.history.back();
+}
+
+        </script>
+    </div>
+</div>
+</div>
+
+{% endblock %}
