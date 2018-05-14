@@ -6,8 +6,8 @@ from app import create_app
 manager = Manager(create_app)
 
 manager.add_command('runserver', Server(
-    use_reloader=True,
-    use_debugger=True
+    use_reloader=False,
+    use_debugger=False,
 ))
 
 
