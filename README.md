@@ -21,7 +21,7 @@ CSS
 
 HTML
 
-What is price Alerter?
+#What is price Alerter?
 
 **Price Alerter** is an online web based application that allows users to track the prices of any
 *online item*. The app allows the user to create a given store along with the price of
@@ -42,7 +42,7 @@ To use Price Alerter you need to use MailGun API. The MailGun API allows
 user to be able to send and receive emails.
 
 
-###Registering with MailGun to send emails
+Registering with MailGun to send emails
 #
 
 To be able to use the *send_email* method in the Mailgun class file you must first register
@@ -67,11 +67,17 @@ You will then be a greeted with the follow pages details:
 These details are secret and should not be shown to anyone
 
 State: Active
+
 IP Address: IP Address
+
 SMTP Hostname: smtp.mailgun.org
+
 Default SMTP Login: postmaster@sandbox<your-random-key-should-be>.mailgun.org
+
 API Base URL https://api.mailgun.net/v3/<your-random-key-should-be>.mailgun.org/messages
+
 Default Password: < Random string for password>
+
 Key: key < random string>
 
 
