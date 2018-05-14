@@ -1,7 +1,10 @@
 
 
+
 Price Alert application
+
 Project complete
+
 Started on 14th April 2018 completed on 14th May 2018.
 
 Technologies Used
