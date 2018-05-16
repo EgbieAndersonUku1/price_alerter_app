@@ -23,9 +23,7 @@ The app will then monitor the price of the item and if the prices changes the us
 
 The site comes with three predefined stores Ebay, Amazon and Game that allows the
 user create an item which the user can then add an alert to.
-            
-            
-        
+           
 # Using Price Alerter
 #
 
@@ -66,28 +64,23 @@ These details are secret and should not be shown to anyone
 7) Key: key < random string>
 
 
-
 ## Entering your details in the Mailgun_constant.py file
 #
 
+Open the Mailgun_constant file. Inside there are three constants. These are 'URL', 'API_KEY' and 'FROM'
 
-The 'URL', 'API_KEY' and 'FROM' constants are part of Mailgun API which allows the
-the user to send emails using the MailGun class method.
-
-**Enter your details into the following mailgun_constant.py file**
+**Enter your details into the following mailgun_constant.py file constants **
 
 1) Enter your 'API BASE URL' in the URL constant below makes sure to end the URL with a slash '/messages or it will not work
-
 2) Enter your 'Key' in the API_KEY constant below
 3) Enter your 'Default SMTP Login' in FROM constant below
 4) Hit save and then you good to go
 
 
-
 # Running Price-alerter on your computer
 #
 
-2) Open a terminal create a folder and call it whatever you want
+1) Open a terminal create a folder and call it whatever you want
 2) Inside that folder we are going to create a virtual environment
 2) Type **virtualenv --python=python3.6 venv** and hit enter. This will create your virtuale environment
 2) To activate the virtual environment on Linux enter the command **source venv/bin/activate** 
@@ -100,6 +93,16 @@ the user to send emails using the MailGun class method.
 4) change your secret key if you wish
 4) Run the command **mongod** to activate the mongo server. In some case you might need to run it with admin priviledges
 5) Run the Flask server by running **python run.py runserver**
+
+
+# Running the application
+
+1) Open a browser and enter the url **http://127.0.0.1:5000/register/**
+![register](https://user-images.githubusercontent.com/7634091/40142666-2e25e0be-5951-11e8-83a8-aad51d6ba612.png)
+
+2) Register your details. Unfortuntately because you are using Mailgun the free tier the email you use to register with the app must be the one you used to register with MailGun. This is where the verification email will be sent to.
+3) Verify your email
+4) Login to the app
 
     
 
