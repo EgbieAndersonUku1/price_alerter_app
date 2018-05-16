@@ -98,11 +98,34 @@ Open the Mailgun_constant file. Inside there are three constants. These are 'URL
 # Running the application
 
 1) Open a browser and enter the url **http://127.0.0.1:5000/register/**
+
 ![register](https://user-images.githubusercontent.com/7634091/40142666-2e25e0be-5951-11e8-83a8-aad51d6ba612.png)
 
 2) Register your details. Unfortuntately because you are using Mailgun the free tier the email you use to register with the app must be the one you used to register with MailGun. This is where the verification email will be sent to.
 3) Verify your email
+
 4) Login to the app
+
+![login](https://user-images.githubusercontent.com/7634091/40142786-9153485c-5951-11e8-8b21-e092006b895f.png)
+
+5) Click on my stores
+
+![my_stores](https://user-images.githubusercontent.com/7634091/40142966-063517a4-5952-11e8-9293-949d3cdb7080.png)
+
+6) You will be created with a button telling you that you have not created any stores yet
+
+![no_stores](https://user-images.githubusercontent.com/7634091/40143092-56ee4b02-5952-11e8-9c70-c45870c7c708.png)
+
+
+7) Enter the details for your new store. For knowledge on how to create the span and store query see the about about page. In this example we have created the store ebay
+
+![ebay](https://user-images.githubusercontent.com/7634091/40143494-795a3c9a-5953-11e8-84ac-d9a1630dab0b.png)
+
+8) After hitting create store you will be greeted with this page
+
+![new_store](https://user-images.githubusercontent.com/7634091/40143730-1f12690a-5954-11e8-9a88-a12137623e37.png)
+
+
 
     
 
