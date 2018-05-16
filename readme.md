@@ -1,8 +1,9 @@
 
 # Price Alert application
 
-Started on 14th April 2018 completed on 14th May 2018.
-project 98 percent complete
+Started on 14th April 2018 completed 
+
+Project 98 percent complete
 
 # Technologies Used
 
@@ -123,13 +124,14 @@ Open the Mailgun_constant file. Inside there are three constants. These are 'URL
 
 8) After hitting create store you will be greeted with this page
 
-![new_store](https://user-images.githubusercontent.com/7634091/40143730-1f12690a-5954-11e8-9a88-a12137623e37.png)
+![new_store](https://user-images.githubusercontent.com/7634091/40147014-c427213c-595f-11e8-8a40-a0e53c1ec954.png)
 
 9) Click on view store
 
 ![view_store](https://user-images.githubusercontent.com/7634091/40143882-989c4b2e-5954-11e8-8542-4f164a2b9508.png)
 
 10) Click on create item. 
+
 ![new_item](https://user-images.githubusercontent.com/7634091/40144091-4ae1bd3c-5955-11e8-816d-ff16294e0e37.png)
 
 11) Click on the create button
@@ -186,6 +188,6 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 
 
 
-
+Continue rest of the readme file tommorrow
     
 
