@@ -162,8 +162,8 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 
   ![blue_ray_player_2](https://user-images.githubusercontent.com/7634091/40145841-4732e1c4-595b-11e8-8cb6-c29d5843afdf.png)
 
-### Notice the item has no alert in the image number 12
-### To add an alert to an item hit the alert button. This enables an alert to be set to an item. You will then be notified by email whenever your item's prices reaches that limit.
+#### Notice the item has no alert in the image number 12
+#### To add an alert to an item hit the alert button. This enables an alert to be set to an item. You will then be notified by email whenever your item's prices reaches that limit.
 
 ### Let add £40 to our alert. We shall now be alerted should our item price hit £40
 
