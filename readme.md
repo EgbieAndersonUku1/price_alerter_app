@@ -1,6 +1,4 @@
 
-
-
 Price Alert application
 
 Project complete
