@@ -167,12 +167,9 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 
 ### Let add £40 to our alert. We shall now be alerted should our item price hit £40
 
-![new_alert](https://user-images.githubusercontent.com/7634091/40145953-b691173e-595b-11e8-9ba0-fd4e86b1fcff.png)
+![new_alert](https://user-images.githubusercontent.com/7634091/40147204-b2ae66bc-5960-11e8-8edf-c9ee28cae82c.png)
 
 ### Now if click active alerts page we see
-
-![new_alert_page](https://user-images.githubusercontent.com/7634091/40146461-814d4758-595d-11e8-89e1-ab138674bec9.png)
-
 ### Notice that our alerts message at the top of the page is now active
 
 ![active_alert_image](https://user-images.githubusercontent.com/7634091/40146051-0c162d20-595c-11e8-9a75-690d6dc79184.png)
