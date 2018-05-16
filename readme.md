@@ -132,6 +132,21 @@ Open the Mailgun_constant file. Inside there are three constants. These are 'URL
 10) Click on create item. 
 ![new_item](https://user-images.githubusercontent.com/7634091/40144091-4ae1bd3c-5955-11e8-816d-ff16294e0e37.png)
 
+11) Click on the create button
+
+![success](https://user-images.githubusercontent.com/7634091/40144270-f53a3f8e-5955-11e8-9d02-3a9d4316e5e7.png)
+
+Note the item url must be a prefix of the store. For example if the store prefix is https://www.ebay.com then item url must be
+https://www.ebay.com/some-random-string. If the item Url prefix does not match the store's url then error will be thrown. If the item already exists then an error message will also be thrown
+
+### If the item's url does not match the store's prefix an error would also be thrown
+
+![does_not_match](https://user-images.githubusercontent.com/7634091/40144681-5abe7202-5957-11e8-9d81-bcf42681e829.png)
+
+### Adding an item to the db that will result in an error if the item already exists
+
+![item_already_exists](https://user-images.githubusercontent.com/7634091/40144470-ae4081a0-5956-11e8-88ed-1f2c9a2d9f34.png)
+
 
 
 
