@@ -2,7 +2,7 @@
 # Price Alert application
 
 Started on 14th April 2018 completed on 14th May 2018.
-project complete
+project 98 percent complete
 
 # Technologies Used
 
@@ -147,6 +147,42 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 
 ![item_already_exists](https://user-images.githubusercontent.com/7634091/40144470-ae4081a0-5956-11e8-88ed-1f2c9a2d9f34.png)
 
+
+12) To view an item
+  *Click on my store
+  *Go to store you wish to view the item and click
+  *Inside you will see all items belong to the store
+  *Click on view item
+  
+  ![view_item](https://user-images.githubusercontent.com/7634091/40144949-0a3a8a4a-5958-11e8-9c0f-c44f406191c3.png)
+  
+  ![blue_ray_player](https://user-images.githubusercontent.com/7634091/40145823-3d018124-595b-11e8-80da-b0fc651b16b5.png)
+
+  ![blue_ray_player_2](https://user-images.githubusercontent.com/7634091/40145841-4732e1c4-595b-11e8-8cb6-c29d5843afdf.png)
+
+### Notice the item has no alert in the image number 12
+### To add an alert to an item hit the alert button. This enables an alert to be set to an item. You will then be notified by email whenever your item's prices reaches that limit.
+
+### Let add £40 to our alert. We shall now be alerted should our item price hit £40
+
+![new_alert](https://user-images.githubusercontent.com/7634091/40145953-b691173e-595b-11e8-9ba0-fd4e86b1fcff.png)
+
+### Now if click active alerts page we see
+
+![new_alert_page](https://user-images.githubusercontent.com/7634091/40146461-814d4758-595d-11e8-89e1-ab138674bec9.png)
+
+### Notice that our alerts message at the top of the page is now active
+
+![active_alert_image](https://user-images.githubusercontent.com/7634091/40146051-0c162d20-595c-11e8-9a75-690d6dc79184.png)
+
+### We can also disable 
+
+![disabled_alert](https://user-images.githubusercontent.com/7634091/40146650-441dd090-595e-11e8-98ec-77e4d853e1a2.png)
+
+
+### or delete the alert
+![delete_alerted](https://user-images.githubusercontent.com/7634091/40146759-a814e70a-595e-11e8-98f9-71a6a6d3fec1.png)
+  
 
 
 
