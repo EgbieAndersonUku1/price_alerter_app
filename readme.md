@@ -170,6 +170,9 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 ![new_alert](https://user-images.githubusercontent.com/7634091/40147204-b2ae66bc-5960-11e8-8edf-c9ee28cae82c.png)
 
 ### Now if click active alerts page we see
+
+![active_alert](https://user-images.githubusercontent.com/7634091/40147389-5969fab6-5961-11e8-84fb-2ba188e5d299.png)
+
 ### Notice that our alerts message at the top of the page is now active
 
 ![active_alert_image](https://user-images.githubusercontent.com/7634091/40146051-0c162d20-595c-11e8-9a75-690d6dc79184.png)
