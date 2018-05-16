@@ -117,13 +117,22 @@ Open the Mailgun_constant file. Inside there are three constants. These are 'URL
 ![no_stores](https://user-images.githubusercontent.com/7634091/40143092-56ee4b02-5952-11e8-9c70-c45870c7c708.png)
 
 
-7) Enter the details for your new store. For knowledge on how to create the span and store query see the about about page. In this example we have created the store ebay
+7) Enter the details for your new store. For knowledge on how to create the span and store query see the about about page. In this example we will be creating the store ebay and all items created will belong to the ebay store
 
 ![ebay](https://user-images.githubusercontent.com/7634091/40143494-795a3c9a-5953-11e8-84ac-d9a1630dab0b.png)
 
 8) After hitting create store you will be greeted with this page
 
 ![new_store](https://user-images.githubusercontent.com/7634091/40143730-1f12690a-5954-11e8-9a88-a12137623e37.png)
+
+9) Click on view store
+
+![view_store](https://user-images.githubusercontent.com/7634091/40143882-989c4b2e-5954-11e8-8542-4f164a2b9508.png)
+
+10) Click on create item. 
+![new_item](https://user-images.githubusercontent.com/7634091/40144091-4ae1bd3c-5955-11e8-816d-ff16294e0e37.png)
+
+
 
 
 
