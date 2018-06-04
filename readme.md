@@ -1,4 +1,8 @@
 
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/EgbieAndersonUku1/price_alerter_app?branch=master)](https://bettercodehub.com/)
+
+
 # Price Alert application
 
 Started on 14th April 2018 completed 
