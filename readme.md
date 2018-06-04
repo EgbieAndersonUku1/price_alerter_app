@@ -5,6 +5,7 @@ Using the Better Code Hub at https://bettercodehub.com I ran my entire price_ale
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/EgbieAndersonUku1/price_alerter_app?branch=master)](https://bettercodehub.com/)
 
+I lost one mark because I did not write unit tests and the other was in **keep unit interface small** because three of class methods contained more than four parameters.
 
 # Price Alert application
 
