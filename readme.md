@@ -1,7 +1,7 @@
 
 # Better Code Hub
 
-Using the Better Code Hub at https://bettercodehub.com I ran my entire repository against the clean code standards to measure whether coding standards where good or bad. Below is the coding compliance result it gave me.
+Using the Better Code Hub at https://bettercodehub.com I ran my entire price_alerter_app repository against the clean code standards to measure whether my coding standards where good or bad. Below is the coding compliance result it gave me.
 
 [![BCH compliance](https://bettercodehub.com/edge/badge/EgbieAndersonUku1/price_alerter_app?branch=master)](https://bettercodehub.com/)
 
