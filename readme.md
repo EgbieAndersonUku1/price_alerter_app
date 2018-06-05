@@ -194,8 +194,9 @@ https://www.ebay.com/some-random-string. If the item Url prefix does not match t
 ![delete_alerted](https://user-images.githubusercontent.com/7634091/40146759-a814e70a-595e-11e8-98f9-71a6a6d3fec1.png)
   
 
-
-
-Continue rest of the readme file tommorrow
+### The database's uses a many to many relationship. This simple means that all items created belong to the store and  all alerts created belong to the item. For instance if an alert was deleted for a particular item, the item itself would still exists. But if the store was deleted all items and alerts that are created within the store will also be deleted as well.
     
+![shop_store](https://user-images.githubusercontent.com/7634091/41007835-ac8c4d3e-691f-11e8-8b43-e90a2379f534.png)
 
+Store has deleted and with that all items and alerts.
+![no_stores](https://user-images.githubusercontent.com/7634091/40143092-56ee4b02-5952-11e8-9c70-c45870c7c708.png)
