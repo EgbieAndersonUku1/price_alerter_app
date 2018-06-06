@@ -202,6 +202,6 @@ The database's uses a many to many relationship. This simple means that all item
 
 The store has been deleted and with that all items and alerts from database. From the GUI we can only access the item through the store and the alert through the item. With the store deleted there is no GUI handler (button) to access the item and no GUI handler (button) to access the alerts. 
 
-Because we had only one store created the page displays **you have not create a store message** but if we had a series of stores, then the page will display all stores that have not been deleted.
+Because we had only one store created the page displays **you have not create a store message** but if we had a series of stores, then the page will display all stores that have not been deleted and the user would able to access any item and alerts created.
 
 ![no_stores](https://user-images.githubusercontent.com/7634091/40143092-56ee4b02-5952-11e8-9c70-c45870c7c708.png)
